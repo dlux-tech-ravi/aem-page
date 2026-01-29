@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export default function AemCtaSection() {
+  const navigate = useNavigate();
   return (
     <section className="relative bg-black text-white overflow-hidden">
       
@@ -23,7 +26,9 @@ export default function AemCtaSection() {
           </p>
 
           <div className="mt-10">
-            <button className="inline-flex items-center justify-center rounded-xl bg-neutral-800 px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-white/20">
+            <button 
+             onClick={() => navigate("/video-library")}
+            className="inline-flex items-center justify-center rounded-xl bg-neutral-800 px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-white/20">
               Learn More Through our Stories & Videos
             </button>
           </div>

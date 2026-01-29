@@ -153,7 +153,7 @@ const AemSitesTabs = () => {
           <div className="absolute inset-0 bg-black/70" />
 
           {/* Content */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 p-8 md:p-12">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 p-8 md:p-12">
             {/* Left Content */}
             <div className="bg-white text-black rounded-xl p-6 md:p-8 max-w-lg">
               <h3 className="text-xl md:text-2xl font-semibold font-sans">

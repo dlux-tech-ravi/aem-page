@@ -75,12 +75,12 @@ export default function AemTwoColumnScroll() {
   return (
     <section
       ref={sectionRef}
-      className="bg-neutral-900 text-white lg:h-screen lg:py-20"
+      className="bg-neutral-900 text-white lg:h-screen py-10 lg:py-20"
     >
       <div className="max-w-full mx-auto px-6 h-full ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 h-full">
           {/* LEFT COLUMN – CENTERED IMAGE */}
-          <div className="flex items-center justify-center pb-20">
+          <div className="flex items-center justify-center lg:pb-20">
             <img
               src="https://images.ctfassets.net/pj0maraabon4/3IyQJCqrkqY3WDqREyDK5N/f50fdff9b577e88238548e51fea061c1/3848871.jpg"
               alt="AEM"

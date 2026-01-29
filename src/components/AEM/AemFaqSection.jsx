@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const FAQS = [
   {
@@ -33,22 +35,31 @@ export default function AemFaqSection() {
   const rightColRef = useRef(null);
   const leftCardRef = useRef(null);
 
-  /* 🔑 Sync left height with right column */
-  useEffect(() => {
-    if (!rightColRef.current || !leftCardRef.current) return;
+ useEffect(() => {
+  if (!rightColRef.current || !leftCardRef.current) return;
 
-    const updateHeight = () => {
-      leftCardRef.current.style.minHeight =
-        `${rightColRef.current.offsetHeight}px`;
-    };
+  const updateHeight = () => {
+    const isMobile = window.innerWidth < 768; // Tailwind md breakpoint
 
-    updateHeight();
-    window.addEventListener("resize", updateHeight);
-    return () => window.removeEventListener("resize", updateHeight);
-  }, [activeIndex]);
+    if (isMobile) {
+      // ✅ Mobile: default / auto height
+      leftCardRef.current.style.minHeight = "auto";
+      return;
+    }
 
+    // ✅ Desktop: sync height
+    leftCardRef.current.style.minHeight =
+      `${rightColRef.current.offsetHeight}px`;
+  };
+
+  updateHeight();
+  window.addEventListener("resize", updateHeight);
+  return () => window.removeEventListener("resize", updateHeight);
+}, [activeIndex]);
+
+const navigate = useNavigate();
   return (
-    <section className="bg-black text-white py-24 font-sans">
+    <section className="bg-black text-white py-10 md:py-24 font-sans">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
@@ -79,7 +90,7 @@ export default function AemFaqSection() {
           <div className="md:col-span-1">
             <div
               ref={leftCardRef}
-              className="sticky top-24 rounded-2xl bg-[#656565]/30 border border-white/10 p-8"
+              className="sticky top-24 rounded-2xl bg-[#656565]/30 border border-white/10 p-8 sm:h-full"
             >
               <h3 className="text-xl font-semibold font-sans">
                 Frequently <br /> Asked Questions
@@ -90,7 +101,9 @@ export default function AemFaqSection() {
                 we’re here to help!
               </p>
 
-              <button className="mt-8 inline-flex items-center rounded-full border border-white/30 px-6 py-2 text-sm transition hover:bg-white hover:text-black">
+              <button
+              onClick={() => navigate("/contact-us")}
+              className="mt-8 inline-flex items-center rounded-full border border-white/30 px-6 py-2 text-sm transition hover:bg-white hover:text-black">
                 Contact Us
               </button>
             </div>
