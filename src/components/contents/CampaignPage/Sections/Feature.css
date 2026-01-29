@@ -1,0 +1,151 @@
+/* Main section styling */
+.feature-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-section__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile Swiper cards */
+.feature-card--mobile {
+  width: 300px;
+  height: 400px;
+}
+
+/* Tablet grid */
+.feature-section__tablet .feature-card--tablet {
+  transition: transform 0.3s ease;
+}
+
+/* Desktop grid */
+.feature-section__desktop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* CTA Button hover effect */
+.feature-section__button:hover {
+  background: #5e1ed3;
+}
+
+/* Responsive - Tablet */
+@media screen and (max-width: 1024px) {
+  .feature-section {
+    padding: 80px 20px;
+  }
+
+  .feature-section__title {
+    font-size: 48px !important;
+  }
+
+  .feature-section__desktop {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px 0;
+  }
+
+  .feature-card--desktop {
+    width: 90% !important;
+    height: auto !important;
+  }
+}
+
+/* Responsive - Mobile */
+@media screen and (max-width: 768px) {
+  .feature-section {
+    padding: 60px 16px;
+  }
+
+  .feature-section__title {
+    font-size: 32px !important;
+    margin-bottom: 40px;
+  }
+
+  .feature-section__mobile {
+    display: block !important;
+  }
+
+  .feature-section__tablet,
+  .feature-section__desktop {
+    display: none !important;
+  }
+
+  .feature-card--mobile {
+    width: 100%;
+    max-width: 340px;
+    height: 420px;
+  }
+
+  .feature-card__title {
+    font-size: 20px !important;
+  }
+
+  .feature-card__desc {
+    font-size: 14px !important;
+  }
+
+  .feature-section__button {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+}
+
+/* Large screens */
+@media screen and (min-width: 1440px) {
+  .feature-section__desktop {
+    gap: 60px;
+  }
+
+  .feature-card--desktop {
+    width: 420px !important;
+    height: 560px !important;
+  }
+}
+
+/* --- Feature.css --- */
+
+/* For screens between 1024px and 1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .feature-section__large-tablet {
+    display: flex !important;
+    flex-direction: row;
+  }
+
+  .feature-section__desktop {
+    display: none !important;
+  }
+
+  .feature-section__title {
+    font-size: 48px !important;
+    margin-bottom: 60px !important;
+  }
+
+  .feature-section__button {
+    padding: 12px 36px !important;
+    font-size: 16px !important;
+  }
+
+  .feature-card--large-tablet {
+    height: 460px !important;
+  }
+
+  .feature-card__overlay {
+    padding: 20px !important;
+  }
+
+  .feature-card__title {
+    font-size: 26px !important;
+  }
+
+  .feature-card__desc {
+    font-size: 14px !important;
+  }
+}
+
