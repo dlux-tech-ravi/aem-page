@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+
+
+.root {
+  --primary: #333333;
+  --secondary: #000000;
+  --third: #ffffff;
+  --fourth: #fe780c;
+  --fifth: #fe3908;
+  font-family: "Open Sans, Regular";
+}
+
+body {
+  background-color: black;
+  color: white !important;
+  overflow-x: hidden;
+}
+
+.main-content-home {
+  margin-top: 100px;
+  min-height: calc(100vh - 100px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* font-family: "Open Sans, Regular"; */
+}
+
+.home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: "Open Sans, Regular";
+}
+
+.home-img-section {
+  /* height: 150vh; */
+  width: 100%;
+  position: relative;
+}
+
+.home-img-section video {
+  width: 100%;
+  /* height: 100%; */
+  margin-top: -100px;
+}
+
+.home-h1 {
+  font-size: 55px;
+  text-align: center;
+  width: 100%;
+  margin-top: -200px;
+  /* margin-bottom: 10rem; */
+  font-family: "Open Sans", "Regular";
+}
+
+.home p {
+  font-size: 16px;
+  /* padding-top: 60px;  */
+  align-items: center;
+  text-align: center;
+  width: 120%;
+  font-family: 'Open Sans', 'Regular';
+}
+
+.home-btn {
+  font-family: "Open Sans", "Regular";
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.5);
+  display: inline-flex;
+  align-content: center;
+  padding: 1rem 3rem;
+  border-radius: 28px;
+  color: white;
+  font-size: 16px;
+  border: 1px solid #666363;
+  margin-top: 20px;
+
+}
+
+.home-btn:hover {
+  background-color: white;
+  color: #000000;
+}
+
+@media (max-width: 600px) {
+  .home-btn {
+    margin-bottom: 60px;
+  }
+
+  .home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* max-width: 600px; */
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 16px;
+    font-family: "Open Sans", "Regular";
+  }
+
+  .home-img-section {
+    height: 65vh;
+    width: 100%;
+    position: relative;
+  }
+
+  .home-img-section video {
+    width: 100%;
+    height: 100%;
+    margin-top: -150px;
+  }
+
+  .home-h1 {
+    font-size: 30px;
+    margin-left: -5px;
+    margin-top: -160px;
+    font-family: "Open Sans", "Regular";
+  }
+
+  .home p {
+    font-size: 13px;
+    width: 80%;
+    margin-left: -20px;
+    font-family: "Open Sans", 'Regular';
+  }
+
+  .home-btn {
+    font-family: "Open Sans", 'Regular';
+    background-color: rgba(128, 128, 128, 0.5);
+    display: inline-flex;
+    padding: 1rem 2rem;
+    border-radius: 28px;
+    /* color: white; */
+    font-size: 15px;
+    border: 1px solid #666363;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: -20px;
+
+  }
+
+  .home-btn:hover {
+    background-color: white;
+    color: #000000;
+  }
+}
+
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+    @keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+
+.gradient-btn {
+  position: relative;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Gradient border */
+.gradient-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ffffff, #666466);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Text animation setup */
+.gradient-btn span {
+  display: inline-block;
+  color: white;
+  transition: transform 0.4s ease;
+}
+
+/* Hover animation */
+.gradient-btn:hover span {
+  animation: slideText 0.6s ease forwards;
+}
+
+/* Keyframes */
+@keyframes slideText {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  49% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.gradient-card-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px; /* 1px border */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 10),
+    rgba(204, 204, 204, 0.50),
+    rgba(205, 206, 206, 0.2)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}

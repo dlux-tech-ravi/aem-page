@@ -1,0 +1,206 @@
+.adobe-services-section_ay {
+  padding: 60px 100px;
+  text-align: center;
+  color: white;
+}
+
+.adobe-services-heading_ay {
+  font-size: 36px;
+  margin-bottom: 48px;
+  font-weight: 600;
+}
+
+.adobe-services-grid_ay {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.adobe-service-card_ay {
+  width: 100%;
+  max-width: 360px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  border-radius: 20px;
+  background: rgba(223, 106, 247, 0.1);
+  backdrop-filter: blur(14px);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.adobe-service-card_ay:hover {
+  transform: rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg)) scale(1.05);
+  transition: transform 0.25s ease;
+}
+
+.adobe-service-card_ay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+  z-index: 2;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.adobe-service-card_ay:hover::before {
+  animation: rotateCardBorder_ay 3s linear infinite;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotateCardBorder_ay {
+  0% {
+    --gradient-angle: 0deg;
+  }
+
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+.adobe-card-face_ay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(183, 77, 246, 0.15), inset 0 0 10px rgba(255, 255, 255, 0.05);
+  color: #fff;
+  background: rgba(223, 106, 247, 0.1);
+  border: 1px solid rgba(94, 45, 172, 0.4);
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.adobe-card-face_ay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(223, 106, 247, 0.25), transparent 60%);
+  transition: background 0.2s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.adobe-card-face_ay:hover::after {
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(223, 106, 247, 0.45), transparent 70%);
+}
+
+.adobe-card-face_ay * {
+  position: relative;
+  z-index: 1;
+}
+
+.adobe-card-icon_ay {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+}
+
+.adobe-card-icon_ay img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  transition: transform 0.6s ease-in-out;
+}
+
+.adobe-card-icon_ay img:hover {
+  transform: scale(1.15);
+}
+
+.adobe-card-icon_ay h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+}
+
+.adobe-card-content_ay p {
+  font-size: 12px;
+  text-align: left;
+  color: #cccccc;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .adobe-services-section_ay {
+    padding: 40px 40px;
+  }
+
+  .adobe-services-heading_ay {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .adobe-services-section_ay {
+    padding: 30px 20px;
+  }
+
+  .adobe-services-heading_ay {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .adobe-service-card_ay {
+    height: auto;
+  }
+
+  .adobe-card-face_ay {
+    padding: 16px;
+  }
+
+  .adobe-card-icon_ay {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .adobe-card-icon_ay h3 {
+    font-size: 18px;
+  }
+
+  .adobe-card-content_ay p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .adobe-services-heading_ay {
+    font-size: 24px;
+  }
+
+  .adobe-card-icon_ay img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .adobe-card-icon_ay h3 {
+    font-size: 16px;
+  }
+
+  .adobe-card-content_ay p {
+    font-size: 10px;
+  }
+}
