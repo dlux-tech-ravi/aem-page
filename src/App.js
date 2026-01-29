@@ -33,7 +33,6 @@ import { ResourcesLibrary } from "./components/contents/Resources/ResourcesLibra
 
 import CommerceCloud from "./components/pages/CommerceCloud";
 import OurTeam from "./components/contents/Careers/OurTeam/OurTeam";
-import WorkfrontFusion from "./components/pages/WorkfrontFusion";
 import Adobecommerces from "./components/pages/Adobecommerces";
 
 import { Outlet } from "react-router-dom"; // Import Outlet for nested routing
@@ -102,7 +101,6 @@ const App = () => {
 
         {/* Adobe Sub-Routes */}
         <Route path="/adobe-workfront" element={<Platform_Adobe_Workfront />} />
-        <Route path="/adobe-workfront-fusion" element={<WorkfrontFusion />} />
         <Route path="/adobe-aem" element={<Platform_Adobe_AEM />} />
         <Route path="/adobe-commerce" element={<Adobecommerces />} />
         {/* <Route path="/adobe-commerces" element={<Adobecommerces />} /> */}
