@@ -30,7 +30,7 @@ import { SuccessStories } from "./components/contents/Resources/Success_Stories/
 import { ResourcesLibrary } from "./components/contents/Resources/ResourcesLibrary/ResourcesLibrary";
 // import VideoLibrary from "./components/contents/Resources/VideoLibrary/VideoLibrary";
 // import AdobeCommerce from "./components/pages/AdobeCommerce";
-import AdobeAnalytics from "./components/pages/AdobeAnalytics";
+
 import CommerceCloud from "./components/pages/CommerceCloud";
 import OurTeam from "./components/contents/Careers/OurTeam/OurTeam";
 import WorkfrontFusion from "./components/pages/WorkfrontFusion";
@@ -106,7 +106,7 @@ const App = () => {
         <Route path="/adobe-aem" element={<Platform_Adobe_AEM />} />
         <Route path="/adobe-commerce" element={<Adobecommerces />} />
         {/* <Route path="/adobe-commerces" element={<Adobecommerces />} /> */}
-        <Route path="/adobe-analytics" element={<AdobeAnalytics />} />
+       
 
         {/* Policy Pages */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
